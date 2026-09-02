@@ -8,6 +8,7 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
 
         Scanner scan = new Scanner(System.in);
+
         /*
         while (true){
             System.out.println("Skriv in en veckodag");
@@ -23,7 +24,9 @@ public class Main {
 
             };
             System.out.println(dag);
-            */
+        }
+        */
+
         /*
         Scanner scanner = new Scanner(System.in);
         System.out.print("Välj dag (1-7): ");
@@ -39,9 +42,10 @@ public class Main {
             case 7 -> name = "Söndag!";
             default -> null;
         };
+
         String typAvDag = switch (day){
-            case 1, 2, 3, 4, 5 ->  "Vardag";
-            case 6, 7 ->  "Helg!!";
+            case 1, 2, 3, 4, 5 -> "Vardag";
+            case 6, 7 -> "Helg!!";
             default -> null;
         };
 
@@ -50,15 +54,16 @@ public class Main {
         } else {
             System.out.println("Va ?!? Okänd dag");
         }
-        scanner.close();
 
+        scanner.close();
         }
-  */
+        */
+
         /*
         for (int i = 10; i > 0; i--) {
             System.out.println(i);
-
         }
+
         System.out.println("Avfyrning");
 
         for (int i = 1; i <= 5; i++ ){
@@ -67,26 +72,30 @@ public class Main {
             }
             System.out.println();
         }
-*/
+        */
 
         for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println(i + " FizzBuzz");
-            }
-            else if (i % 3 == 0) {
-                System.out.println(i + " Fizz");
-            }
-            else if (i % 5 == 0) {
-                System.out.println(i + " Buzz");
-            }
+            System.out.println(getFizzBuzz(i));
         }
+    }
+
+    public static String getFizzBuzz(int n) {
+
+        String answer = "";
+
+        if (n % 3 == 0 && n % 5 == 0) {
+            answer = "FizzBuzz";
+        }
+        else if (n % 3 == 0) {
+            answer = "Fizz";
+        }
+        else if (n % 5 == 0) {
+            answer = "Buzz";
+        }
+        else {
+            answer = String.valueOf(n);
         }
 
-        }
-
-
-
-
-
-
-
+        return answer;
+    }
+}
